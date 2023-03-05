@@ -7,5 +7,5 @@ def receive():
     if request.method == 'POST':
         data = json.load(request.form['jsonData'])
 
-    return "<p>Hello, World!</p>"
+    return render_template('result.html', data = data)
 
