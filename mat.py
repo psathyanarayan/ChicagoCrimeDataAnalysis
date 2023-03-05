@@ -17,5 +17,5 @@ def plotit():
     state = list(crimes.keys())
     total = list(crimes.values())
     plt.bar(range(len(crimes)), total, tick_label=state)
-    plt.xticks(rotation=-45, ha='right')
+    plt.xticks(rotation=-90, ha='right')
     plt.savefig('graph.png')
