@@ -5,11 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Charts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 </head>
 <body>
-    <form action="templates/charts.html" method="post">
-        <input type="text" name="" id="">
-        <input type="submit" name="" id="">
-    </form>
+    <div class="container">
+        <form action="/action_page.php">
+        <div class="row">
+          
+          <div class="col-75">
+            <textarea id="subject" name="jsonData" placeholder="Paste JSON" style="height:200px"></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+        </form>
+      </div>
 </body>
 </html>
