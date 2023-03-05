@@ -1,9 +1,22 @@
 import json
-state = []
+import matplotlib.pyplot as plt
+crimes = {}
+d = {}
+ls = []
 with open("data.json","r") as f:
     data = json.load(f)
     for i in data:
-        if state == [] or i.get("State","") not in state:
-            state.append(i['State'])
-print(state)
-            
+        jsonData = []
+        for j in i['Data']:
+            d = i['Data'].get("Totals")
+        if crimes == {} or i.get("State","") not in crimes:
+            crimes[i['State']] = d['Property'].get("All")
+print(crimes)
+
+
+state = list(crimes.keys())
+total = list(crimes.values())
+
+plt.bar(range(len(crimes)), total, tick_label=state)
+plt.xticks(rotation=90, ha='right')
+plt.show()
