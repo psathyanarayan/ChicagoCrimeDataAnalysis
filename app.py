@@ -4,8 +4,9 @@ app = Flask(__name__)
 
 @app.route("/", methods = ('GET','POST'))
 def receive():
-    #data = request.form['jsonData']
     if request.method == 'POST':
-        data = json.load(request.form['jsonData'])
-        #return render_template('result.html', data = data)
+        data = request.form['jsonData']
+        with open('data.json','w') as f1:
+            f1.write(data)
+        return render_template('result.html', data = data)
     return render_template('index.html')
